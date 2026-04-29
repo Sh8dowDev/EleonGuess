@@ -179,6 +179,7 @@ const ELEONS: Eleon[] = [
 type GameStatus = 'MENU' | 'PLAYING' | 'FINISHED';
 
 export default function App() {
+  const assetBase = import.meta.env.BASE_URL;
   const [status, setStatus] = useState<GameStatus>('MENU');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [guess, setGuess] = useState('');
@@ -284,7 +285,7 @@ export default function App() {
         <header className="mb-8 border-b-8 border-white pb-8 flex flex-col items-center">
           <div className="flex flex-col md:flex-row items-center justify-between w-full space-y-6 md:space-y-0">
             <div className="flex items-center space-x-6">
-              <img src="/logo.png" alt="Eleon Logo" className="h-20 md:h-28 w-auto object-contain drop-shadow-2xl" />
+              <img src={`${assetBase}logo.png`} alt="Eleon Logo" className="h-20 md:h-28 w-auto object-contain drop-shadow-2xl" />
               <div className="flex flex-col">
                 <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tight text-white drop-shadow-[0_6px_0_rgba(30,58,138,1)]">Guess</h1>
                 <span className="bg-yellow-400 text-blue-900 inline-block self-start text-[14px] px-4 py-1 font-black rounded-full shadow-lg transform -rotate-2 mt-1">UNOFFICIAL</span>
@@ -486,7 +487,7 @@ export default function App() {
       <div className="fixed bottom-24 right-12 w-20 h-20 bg-blue-500/10 rounded-full hidden lg:block"></div>
       <div className="fixed bottom-48 right-32 w-10 h-10 bg-blue-500/5 rounded-full hidden lg:block"></div>
 
-      <audio ref={audioRef} src="/Eleons_OST_idkthename.mp3" loop />
+      <audio ref={audioRef} src={`${assetBase}Eleons_OST_idkthename.mp3`} loop />
     </div>
   );
 }
