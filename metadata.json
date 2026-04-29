@@ -1,0 +1,6 @@
+{
+  "name": "Elemon Guess",
+  "description": "A retro-styled guessing game for Elemon species with a 24fps silhouette challenge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
